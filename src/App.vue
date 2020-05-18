@@ -1,19 +1,25 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <mamad />
+    <Teams v-bind:teams="teams" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import mamad from "./components/mamad.vue";
+import Teams from "./components/Teams.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      teams: [
+        { id: 1, name: "Perspolis", title: "Champion" },
+        { id: 2, name: "Esteghlal", title: "Loser" },
+        { id: 3, name: "Sepahan", title: "Not applicable" }
+      ]
+    };
+  },
   components: {
-    HelloWorld,
-    mamad
+    Teams
   }
 };
 </script>
